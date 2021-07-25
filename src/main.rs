@@ -15,7 +15,7 @@ fn handle_client(mut stream: TcpStream) {
                 stream.write(&read[0..n]).unwrap();
             }
             Err(err) => {
-                std::panic::panic_any(err);//生成错误信息
+                std::panic::panic_any(err);//使用标准库生成错误信息
             }
         }
     }
