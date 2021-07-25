@@ -1,7 +1,6 @@
 use std::net::{TcpListener, TcpStream};//引入标准库
 use std::thread;
-use std::io::Read;
-use std::io::Write;
+use std::io::{Read, Write};
 
 fn main() {//构建主函数
     let listener = TcpListener::bind("127.0.0.1:8080").unwrap();//绑定本地监听端口
