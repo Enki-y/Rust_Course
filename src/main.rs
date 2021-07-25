@@ -24,7 +24,7 @@ fn handle_client(mut stream: TcpStream) {
 fn main() {//构建主函数
     let listener = TcpListener::bind("127.0.0.1:8080").unwrap();//绑定本地监听端口
 
-    for stream in listener.incoming() {
+    for stream in listener.incoming() {//监听传入信息
         match stream {
             Ok(stream) => {
                 thread::spawn(move || {
