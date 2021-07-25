@@ -3,8 +3,15 @@ use std::thread;
 use std::io::{Read, Write};
 
 fn main() {//构建主函数
+
     let listener = TcpListener::bind("127.0.0.1:9527").unwrap();//绑定本地监听端口
 
+    if let Ok(_stream) = TcpStream::connect("127.0.0.1:9527") {
+        println!("Connected to the server!");
+    } else {
+        println!("Couldn't connect to server...");
+    }
+    
     for stream in listener.incoming() {
         match stream {
             Ok(stream) => {
