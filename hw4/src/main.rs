@@ -1,18 +1,22 @@
 fn main() {
     println!("Hello, world!");
-    let light = TrafficLight::Yellow;
+    let light = TrafficLight::Green;
     println!("Light is {}", light.time());
 }
 
 enum TrafficLight {
     Red,
     Yellow,
-    Green,
+    Green
 }
 
 
 impl TrafficLight {
     fn time(&self) -> u8 {
-        60
+        match self{
+            TrafficLight::Red => 20,
+            TrafficLight::Green => 30,
+            TrafficLight::Yellow => 3
+        }
     }
 }
